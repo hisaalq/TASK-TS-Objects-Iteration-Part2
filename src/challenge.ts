@@ -19,8 +19,7 @@ import { Student } from "./students";
  */
 function getStudentsByCourse(students: Student[], course: string): Student[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  return students.filter((student) => student.courses.includes(course));
 }
 
 /**
@@ -36,8 +35,7 @@ function getStudentsByCourse(students: Student[], course: string): Student[] {
  */
 function listAllCourses(students: Student[]): string[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  return [...new Set(students.flatMap((student) => student.courses))];
 }
 
 export { getStudentsByCourse, listAllCourses };
